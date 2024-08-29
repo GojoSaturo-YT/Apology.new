@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apology Accepted</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      .countdown {
+        font-size: 5em; /* Larger font size for better visibility */
+        font-weight: bold;
+        color: #ffeb3b; /* Bright color for countdown */
+        margin-top: 20px;
+        text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6); /* Enhanced text shadow */
+        animation: pulse 1s infinite; /* Pulsing animation */
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .prompt {
+        font-size: 1.5em;
+        color: #fff;
+        margin-top: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p><img src="gifs/gifs3.gif"></p>
+      <h1>Hehe Meko Pata Tha Tu Accept Krlegi </h1>
+      <p class="countdown" id="countdown">3</p>
+      <p class="prompt" id="prompt">Ab Group Join Krle Plej...</p>
+    </div>
+
+    <script>
+      // Countdown logic
+      let countdownValue = 3;
+      const countdownElement = document.getElementById('countdown');
+      const promptElement = document.getElementById('prompt');
+      
+      function updateCountdown() {
+        if (countdownValue > 0) {
+          countdownValue--;
+          countdownElement.textContent = countdownValue;
+        } else {
+          clearInterval(countdownInterval);
+          redirectToGroup();
+        }
+      }
+
+      function redirectToGroup() {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        
+        // Check if the user is on a mobile device
+        const isMobile = /android|iPad|iPhone|iPod/.test(userAgent);
+
+        if (isMobile) {
+          // For mobile users, use the WhatsApp app
+          window.location.href = "https://chat.whatsapp.com/FzRPWHt2TdUCRw5ZDDB4Xk"; // Replace with your WhatsApp group link
+        } else {
+          // For desktop users, open in Google Chrome
+          window.open("https://chat.whatsapp.com/FzRPWHt2TdUCRw5ZDDB4Xk", "_blank");
+        }
+      }
+
+      const countdownInterval = setInterval(updateCountdown, 1000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #fbc2eb, #a6c0fe); /* Gradient background */
+  background-attachment: fixed; /* Fixes background during scroll */
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 500px;
+  margin: 20px;
+  background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8); /* Enhanced 3D shadow effect */
+  transform: perspective(1000px) rotateX(10deg); /* 3D transformation */
+  transition: transform 0.5s ease-in-out;
+}
+
+.container:hover {
+  transform: perspective(1000px) rotateX(0deg) scale(1.05); /* Hover effect with scale */
+}
+
+.container h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Stronger text shadow for 3D effect */
+  margin-bottom: 10px;
+}
+
+.countdown {
+  font-size: 5em; /* Larger font size for countdown */
+  font-weight: bold;
+  color: #ffeb3b; /* Bright color for countdown */
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6); /* Enhanced text shadow for 3D effect */
+  animation: pulse 1s infinite; /* Pulsing animation */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn {
+  display: flex;
+  gap: 25px;
+}
+
+.btn a {
+  text-decoration: none;
+  color: #111;
+  background: #fff;
+  padding: 10px 25px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Enhanced button shadow */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  transform: perspective(500px) rotateX(0deg); /* 3D perspective for buttons */
+}
+
+.btn a:hover {
+  background-color: #f0f0f0;
+  transform: perspective(500px) rotateX(10deg) translateY(-5px); /* Lift and 3D effect on hover */
+}
